@@ -105,7 +105,7 @@ def promote(update: Update, context: CallbackContext) -> str:
 
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#PROMOTED\n"
+        f"USER PROMOTED SUCCESSFULLY\n"
         f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
         f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
     )
@@ -128,6 +128,11 @@ def demote(update: Update, context: CallbackContext) -> str:
     user = update.effective_user
 
     user_id = extract_user(message, args)
+
+     if user_can_promote(chat, user, bot.id) is False:
+        message.reply_text("You don't have enough rights to demote someone!")
+        return 
+
     if not user_id:
         message.reply_text(
             "You don't seem to be referring to a user or the ID specified is incorrect.."
@@ -173,7 +178,7 @@ def demote(update: Update, context: CallbackContext) -> str:
 
         log_message = (
             f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#DEMOTED\n"
+            f"USER DEMOTED SUCCESSFULLY\n"
             f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
             f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
         )
@@ -424,15 +429,20 @@ def __chat_settings__(chat_id, user_id):
 @can_pin
 @user_admin
 @loggable
-def pin(update: Update, context: CallbackContext) -> str:
-    bot = context.bot
+def pin(update, context):
+    bot = bot
     args = context.args
-
     user = update.effective_user
     chat = update.effective_chat
+    message = update.effective_message
 
     is_group = chat.type != "private" and chat.type != "channel"
+
     prev_message = update.effective_message.reply_to_message
+
+    if user_can_pin(chat, user, bot.id) is False:
+        message.reply_text("You are missing rights to pin a message!")
+        return ""
 
     is_silent = True
     if len(args) >= 1:
@@ -452,10 +462,12 @@ def pin(update: Update, context: CallbackContext) -> str:
                 pass
             else:
                 raise
-        log_message = (
-            f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#PINNED\n"
-            f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}"
+        return (
+            "<b>{}:</b>"
+            "\nMESSAGE PINNED SUCCESSFULLY"
+            "\n<b>Admin:</b> {}".format(
+                html.escape(chat.title), mention_html(user.id, user.first_name)
+            )
         )
 
         return log_message
@@ -481,7 +493,7 @@ def unpin(update: Update, context: CallbackContext) -> str:
 
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#UNPINNED\n"
+        f"MESSAGE UNPINNED SUCCESSFULLY\n"
         f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}"
     )
 
@@ -646,8 +658,6 @@ __help__ = """
  ❍ /antispam <on/off/yes/no>*:* Will toggle our antispam tech or return your current settings.
  ❍ /addnt*:* Adds Group to NightMode Chats
  ❍ /rmnt*:* Removes Group From NightMode Chats
- ❍ /addnsfw*:* Adds The Group to nsfw Watch List
- ❍ /rmnsfw*:* Removes The Group From nsfw Watch List
  ❍ /del*:* deletes the message you replied to
  ❍ /purge*:* deletes all messages between this and the replied to message.
  ❍ /purge <integer X>*:* deletes the replied message, and X messages following it if replied to a message.

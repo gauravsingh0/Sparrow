@@ -31,7 +31,7 @@ async def can_change_info(message):
     return isinstance(p, types.ChannelParticipantCreator) or (
         isinstance(p, types.ChannelParticipantAdmin) and p.admin_rights.change_info
     )
-@register(pattern="^/nsfw")
+@register(pattern="^/defence")
 async def nsfw(event):
     if event.is_private:
        return   
@@ -43,7 +43,7 @@ async def nsfw(event):
         await event.reply("`NSfw Watch is off for this chat`")
 
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
-@register(pattern="^/addnsfw")
+@register(pattern="^/rmdefence")
 async def nsfw_watch(event):
     if event.is_private:
        return   
@@ -104,7 +104,14 @@ async def ws(event):
         else:
             ujwal = wstark.id
         try:
-            await tbot.send_message(event.chat_id, f"**#NSFW_WATCH** \n**Chat :** `{hehe}` \n**Nsfw Sender - User / Bot :** `{ujwal}` \n**Chat Title:** `{ctitle}`")  
+            await tbot.send_message(event.chat_id, f"**#ANTI_NSFW_SHIELD** \n**Chat :** `{hehe}` \n**Nsfw Sender - User / Bot :** `{ujwal}` \n**Chat Title:** `{ctitle}`")  
             return
         except:
             return
+
+__mod_name__ = "A-SHIELD"
+
+__help__ = """
+*Nsfw Watch Helps to Protect Your Group From Nudety*
+ ❍ /defence*:* Adds The Group to nsfw Watch List
+ ❍ /rmdefence*:* Removes The Group From nsfw Watch List
