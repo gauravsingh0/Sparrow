@@ -129,9 +129,9 @@ def demote(update: Update, context: CallbackContext) -> str:
 
     user_id = extract_user(message, args)
 
-      if user_can_promote(chat, user, context.bot.id) is False:
+    if user_can_promote(chat, user, context.bot.id) is False:
         message.reply_text("You don't have enough rights to demote someone!")
-        return
+        return ""
 
     if not user_id:
         message.reply_text(
