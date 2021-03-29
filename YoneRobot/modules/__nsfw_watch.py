@@ -115,3 +115,4 @@ __help__ = """
 *Nsfw Watch Helps to Protect Your Group From Nudety*
  ❍ /defence*:* Adds The Group to nsfw Watch List
  ❍ /rmdefence*:* Removes The Group From nsfw Watch List
+"""
