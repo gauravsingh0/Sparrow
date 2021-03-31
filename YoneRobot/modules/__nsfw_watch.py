@@ -43,7 +43,7 @@ async def nsfw(event):
         await event.reply("`NSfw Watch is off for this chat`")
 
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
-@register(pattern="^/rmdefence")
+@register(pattern="^/addshield")
 async def nsfw_watch(event):
     if event.is_private:
        return   
@@ -58,7 +58,7 @@ async def nsfw_watch(event):
     add_nsfwatch(str(event.chat_id))
     await event.reply(f"**Added Chat {event.chat.title} With Id {event.chat_id} To Database. This Groups Nsfw Contents Will Be Deleted And Logged in Logging Group**")
 
-@register(pattern="^/rmnsfw ?(.*)")
+@register(pattern="^/rmshield ?(.*)")
 async def disable_nsfw(event):
     if event.is_private:
        return   
@@ -113,6 +113,7 @@ __mod_name__ = "A-SHIELD"
 
 __help__ = """
 *Nsfw Watch Helps to Protect Your Group From Nudety*
- ❍ /defence*:* Adds The Group to nsfw Watch List
- ❍ /rmdefence*:* Removes The Group From nsfw Watch List
+ ❍ /defence*:* Check NSFW WATCH status in group
+ ❍ /addshield*:* Adds The Group to nsfw Watch List
+ ❍ /rmshield*:* Removes The Group From nsfw Watch List
 """
