@@ -8,7 +8,7 @@
          "manager",
          "yone"
       ],   
-   "repository": "https://github.com/Mr-Dark-Prince/YoneRobot",
+   "repository": "https://github.com/noob-kittu/YoneRobot",
    "addons": [
       {
          "options": {
@@ -43,6 +43,11 @@
          "required": true,
          "value": ""
       },
+      "BOT_ID": {
+         "description": "Your bot ID.. Use any other bot to get it.",
+         "required": true,
+         "value": ""
+      },
       "HEROKU_API_KEY": {
         "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
         "value": ""
@@ -56,7 +61,7 @@
          "value": ""
       },
       "SUPPORT_CHAT": {
-         "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to yone support than consider you made an enemy.",
+         "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to masha support than consider you made an enemy.",
          "required": true,
          "value": ""
       },
@@ -65,7 +70,15 @@
          "required": false,
          "value": ""
       },
-      "EVENT_LOGS": {
+      "IBM_WATSON_CRED_URL": {
+         "description": "This is required for the speech to text module. Get your USERNAME from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html",
+         "required": false
+     },
+     "IBM_WATSON_CRED_PASSWORD": {
+        "description": "This is required for the speech to text module. Get your PASSWORD from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html",
+        "required": false
+     },
+     "EVENT_LOGS": {
          "description": "Event logs channel to note down important bot level events, recommend to make this public. ex: '-123456'",
          "required": true,
          "value": "-123456798"
@@ -91,7 +104,7 @@
         "required": false
       },
       "DEV_USERS": {
-         "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother yone support then keep the current ID's here at they are and add yours.",
+         "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Masha support then keep the current ID's here at they are and add yours.",
          "required": false,
          "value": ""
       },
