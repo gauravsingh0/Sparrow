@@ -13,6 +13,7 @@ from youtube_dl import YoutubeDL
 from youtubesearchpython import SearchVideos
 
 from YoneRobot.conf import get_str_key
+from YoneRobot.utils.pluginshelper import get_text, progress
 from YoneRobot import pbot
 
 GENIUS = get_str_key("GENIUS_API_TOKEN", None)
