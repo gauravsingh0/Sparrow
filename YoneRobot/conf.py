@@ -1,4 +1,5 @@
 from envparse import env
+from YoneRobot import LOGGER
 
 DEFAULTS = {
     "LOAD_MODULES": True,
@@ -10,10 +11,10 @@ def get_str_key(name, required=False):
     else:
         default = None
     if not (data := env.str(name, default=default)) and not required:
-        log.warn("No str key: " + name)
+        LOGGER.warn("No str key: " + name)
         return None
     elif not data:
-        log.critical("No str key: " + name)
+        LOGGER.critical("No str key: " + name)
         sys.exit(2)
     else:
         return data
