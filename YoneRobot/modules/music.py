@@ -84,7 +84,7 @@ async def ytmusic(client, message: Message):
             os.remove(files)
 
 
-@pbot.on_message(filters.command(["music", "sng"]))
+@pbot.on_message(filters.command(["music", "song"]))
 async def ytmusic(client, message: Message):
     urlissed = get_text(message)
     if not urlissed:
@@ -297,7 +297,6 @@ async def lyrics(client, message):
     return
 
 
-_mod_name_ = "SONG"
 
 _help_ = """
 /video <i>query</i>: download video from youtube
@@ -306,3 +305,5 @@ _help_ = """
 /lyrics <i>song name</i> : This plugin searches for song lyrics with song name.
 /glyrics <i> song name </i> : This plugin searches for song lyrics with song name and artist.
 """
+
+_mod_name_ = "MUSIC"
