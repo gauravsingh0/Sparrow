@@ -656,8 +656,6 @@ __help__ = """
  ❍ /setdescription <description>*:* Sets new chat description in group.
  ❍ /admincache*:* force refresh the admins list
  ❍ /antispam <on/off/yes/no>*:* Will toggle our antispam tech or return your current settings.
- ❍ /addnt*:* Adds Group to NightMode Chats
- ❍ /rmnt*:* Removes Group From NightMode Chats
  ❍ /del*:* deletes the message you replied to
  ❍ /purge*:* deletes all messages between this and the replied to message.
  ❍ /purge <integer X>*:* deletes the replied message, and X messages following it if replied to a message.

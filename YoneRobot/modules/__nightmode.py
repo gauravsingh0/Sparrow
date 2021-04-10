@@ -131,3 +131,10 @@ async def job_open():
 scheduler = AsyncIOScheduler(timezone="Asia/Kolkata")
 scheduler.add_job(job_open, trigger="cron", hour=6, minute=10)
 scheduler.start()
+
+__mod_name__ = "NightMode"
+
+__help__ = """
+ ❍ /addnt*:* Adds Group to NightMode Chats
+ ❍ /rmnt*:* Removes Group From NightMode Chats
+ """

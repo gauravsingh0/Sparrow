@@ -1,18 +1,14 @@
 import html
-
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
-from telegram.error import BadRequest
-from telegram.ext import CallbackContext, CallbackQueryHandler, run_async
-from telegram.utils.helpers import mention_html
-
-import YoneRobot.modules.sql.approve_sql as sql
-from YoneRobot import DRAGONS, dispatcher
 from YoneRobot.modules.disable import DisableAbleCommandHandler
-from YoneRobot.modules.helper_funcs.chat_status import user_admin
+from YoneRobot import dispatcher, DRAGONS
 from YoneRobot.modules.helper_funcs.extraction import extract_user
+from telegram.ext import CallbackContext, CallbackQueryHandler, Filters, run_async
+import YoneRobot.modules.sql.approve_sql as sql
+from YoneRobot.modules.helper_funcs.chat_status import user_admin
 from YoneRobot.modules.log_channel import loggable
-
-
+from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, Update
+from telegram.utils.helpers import mention_html
+from telegram.error import BadRequest
 @loggable
 @user_admin
 @run_async
@@ -177,8 +173,10 @@ def unapproveall_btn(update: Update, context: CallbackContext):
     member = chat.get_member(query.from_user.id)
     if query.data == "unapproveall_user":
         if member.status == "creator" or query.from_user.id in DRAGONS:
+            users = []
             approved_users = sql.list_approved(chat.id)
-            users = [int(i.user_id) for i in approved_users]
+            for i in approved_users:
+                users.append(int(i.user_id))
             for user_id in users:
                 sql.disapprove(chat.id, user_id)
 
@@ -200,15 +198,13 @@ def unapproveall_btn(update: Update, context: CallbackContext):
 __help__ = """
 Sometimes, you might trust a user not to send unwanted content.
 Maybe not enough to make them admin, but you might be ok with locks, blacklists, and antiflood not applying to them.
-
 That's what approvals are for - approve of trustworthy users to allow them to send 
-
 *Admin commands:*
-❍ /approval*:* Check a user's approval status in this chat.
-❍ /approve*:* Approve of a user. Locks, blacklists, and antiflood won't apply to them anymore.
-❍ /unapprove*:* Unapprove of a user. They will now be subject to locks, blacklists, and antiflood again.
-❍ /approved*:* List all approved users.
-❍ /unapproveall*:* Unapprove *ALL* users in a chat. This cannot be undone.
+- `/approval`*:* Check a user's approval status in this chat.
+- `/approve`*:* Approve of a user. Locks, blacklists, and antiflood won't apply to them anymore.
+- `/unapprove`*:* Unapprove of a user. They will now be subject to locks, blacklists, and antiflood again.
+- `/approved`*:* List all approved users.
+- `/unapproveall`*:* Unapprove *ALL* users in a chat. This cannot be undone.
 """
 
 APPROVE = DisableAbleCommandHandler("approve", approve)
@@ -225,6 +221,6 @@ dispatcher.add_handler(APPROVAL)
 dispatcher.add_handler(UNAPPROVEALL)
 dispatcher.add_handler(UNAPPROVEALL_BTN)
 
-__mod_name__ = "APPROVAL"
+__mod_name__ = "Approvals"
 __command_list__ = ["approve", "unapprove", "approved", "approval"]
 __handlers__ = [APPROVE, DISAPPROVE, APPROVED, APPROVAL]

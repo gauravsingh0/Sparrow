@@ -109,7 +109,7 @@ async def ws(event):
         except:
             return
 
-__mod_name__ = "A-SHIELD"
+__mod_name__ = "A-Shield"
 
 __help__ = """
 *Nsfw Watch Helps to Protect Your Group From Nudety*

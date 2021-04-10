@@ -2,8 +2,8 @@ __mod_name__ = "◎TOOLS"
 
 __help__ = """
 *Telegraph*
- ❍ /tm :Get Telegraph Link Of Replied Media
- ❍ /tt :Get Telegraph Link of Replied Text
+ ❍ /txm :Get Telegraph Link Of Replied Media
+ ❍ /txt :Get Telegraph Link of Replied Text
 
 *Chatbot* 
 _Admins only:_
