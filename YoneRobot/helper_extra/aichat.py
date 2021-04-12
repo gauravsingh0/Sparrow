@@ -20,3 +20,11 @@ def remove_chat(chat_id):
     else:
         lydia.delete_one({"chat_id": chat_id})
         return True
+
+
+def get_session_t(chat_id):
+    star = talkmode.find_one({"chat_id": chat_id})
+    if not star:
+        return False
+    else:
+        return star
