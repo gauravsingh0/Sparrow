@@ -84,12 +84,12 @@ async def ws(event):
         return
     if not (event.gif or event.video or event.video_note or event.photo or event.sticker):
         return
-    hmmstark = await is_nsfw(event)
+    hmmstark = is_nsfw(event)
     his_id = event.sender_id
     if hmmstark is True:
         try:
-            await event.delete()
-            await event.client(EditBannedRequest(event.chat_id, his_id, MUTE_RIGHTS))
+             event.delete()
+             event.client(EditBannedRequest(event.chat_id, his_id, MUTE_RIGHTS))
         except:
             pass
         lolchat = await event.get_chat()
