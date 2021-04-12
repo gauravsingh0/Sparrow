@@ -31,7 +31,7 @@ from YoneRobot import BOT_ID
 from YoneRobot.pyrogramee.telethonbasics import is_admin
 from YoneRobot.events import register
 from YoneRobot import MONGO_DB_URI as db
-from YoneRobot.sql_extended.nsfw_watch_sql import (
+from YoneRobot.modules.sql_extended.nsfw_watch_sql import (
     add_nsfwatch,
     get_all_nsfw_enabled_chat,
     is_nsfwatch_indb,
