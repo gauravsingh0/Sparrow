@@ -263,7 +263,7 @@ async def inuka(client, message):
 
 
 @yone.on_message(
-    filters.regex("yone|yone|kittu|hello|hi")
+    filters.regex("yone|Yone|kittu|hello|hi")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
