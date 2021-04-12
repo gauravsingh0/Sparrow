@@ -30,7 +30,8 @@ from YoneRobot import BOT_ID
 # from YoneRobot.db.mongo_helpers.nsfw_guard import add_chat, get_all_nsfw_chats, is_chat_in_db, rm_chat
 from YoneRobot.pyrogramee.telethonbasics import is_admin
 from YoneRobot.events import register
-from YoneRobot import MONGO_DB_URI as db
+from YoneRobot import MONGO_DB_URI 
+from pymongo import MongoClient
 from YoneRobot.modules.sql_extended.nsfw_watch_sql import (
     add_nsfwatch,
     get_all_nsfw_enabled_chat,
@@ -42,6 +43,11 @@ from YoneRobot import telethn as tbot
 translator = google_translator()
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
+MONGO_DB_URI = get_str_key("MONGO_DB_URI")
+
+client = MongoClient()
+client = MongoClient(MONGO_DB_URI)
+db = client["yonerobot"]
 
 async def is_nsfw(event):
     lmao = event
@@ -151,7 +157,7 @@ async def ws(event):
         await event.delete()
         st = sender.first_name
         hh = sender.id
-        final = f"**NSFW DETECTED**\n\n[{st}](tg://user?id={hh}) your message contain NSFW content.. So, Daisy deleted the message\n\n **Nsfw Sender - User / Bot :** [{st}](tg://user?id={hh})  \n\n`⚔️Automatic Detections Powered By DaisyAI` \n**#GROUP_GUARDIAN** "
+        final = f"**NSFW DETECTED**\n\n[{st}](tg://user?id={hh}) your message contain NSFW content.. So, Yone deleted the message\n\n **Nsfw Sender - User / Bot :** [{st}](tg://user?id={hh})  \n\n`⚔️Automatic Detections Powered By YoneAI` \n**#GROUP_GUARDIAN** "
         dev = await event.respond(final)
         await asyncio.sleep(30)
         await dev.delete()
@@ -216,7 +222,7 @@ async def nsfw_watch(client, message):
             Escobar = midhun.id
         await client.send_message(
             message.chat.id,
-            f"**NSFW DETECTED**\n\n{hehe}'s message contain NSFW content.. So, Daisy deleted the message\n\n **Nsfw Sender - User / Bot :** `{Escobar}` \n**Chat Title:** `{ctitle}` \n\n`⚔️Automatic Detections Powered By DaisyAI` \n**#GROUP_GUARDIAN** ",
+            f"**NSFW DETECTED**\n\n{hehe}'s message contain NSFW content.. So, Yone deleted the message\n\n **Nsfw Sender - User / Bot :** `{Escobar}` \n**Chat Title:** `{ctitle}` \n\n`⚔️Automatic Detections Powered By YoneAI` \n**#GROUP_GUARDIAN** ",
         )
         message.continue_propagation()
 
@@ -375,7 +381,7 @@ async def del_profanity(event):
                     await event.delete()
                     st = sender.first_name
                     hh = sender.id
-                    final = f"**NSFW DETECTED**\n\n{st}](tg://user?id={hh}) your message contain NSFW content.. So, Daisy deleted the message\n\n **Nsfw Sender - User / Bot :** {st}](tg://user?id={hh})  \n\n`⚔️Automatic Detections Powered By DaisyAI` \n**#GROUP_GUARDIAN** "
+                    final = f"**NSFW DETECTED**\n\n{st}](tg://user?id={hh}) your message contain NSFW content.. So, Yone deleted the message\n\n **Nsfw Sender - User / Bot :** {st}](tg://user?id={hh})  \n\n`⚔️Automatic Detections Powered By YoneAI` \n**#GROUP_GUARDIAN** "
                     dev = await event.respond(final)
                     await asyncio.sleep(10)
                     await dev.delete()
@@ -440,7 +446,7 @@ async def del_profanity(event):
 
 __help__ = """
 <b> Group Guardian: </b>
-✪ Daisy can protect your group from NSFW senders, Slag word users and also can force members to use English
+✪ Yone can protect your group from NSFW senders, Slag word users and also can force members to use English
 
 <b>Commmands</b>
  - /nsfwguardian <i>on/off</i> - Enable|Disable Porn cleaning
