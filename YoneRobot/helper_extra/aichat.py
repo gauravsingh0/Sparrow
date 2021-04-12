@@ -1,6 +1,6 @@
 from YoneRobot import MONGO_DB_URI as db_x
 
-lydia = db_x["CAHTBOT"]
+lydia = db_x["CHATBOT"]
 talkmode = db_x["TALKMODE"]
 
 
