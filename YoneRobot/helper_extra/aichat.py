@@ -1,4 +1,4 @@
-from YoneRobot import MONGO_DB_URI as db_x
+from YoneRobot.mongo import client as db_x
 
 lydia = db_x["CHATBOT"]
 talkmode = db_x["TALKMODE"]
