@@ -16,8 +16,7 @@ client = MongoClient()
 client = MongoClient(MONGO_DB_URI)
 motor = motor_asyncio.AsyncIOMotorClient(MONGO_DB_URI)
 db = client["yonerobot"]
-db = motor[MONGO_DB_URI
-]
+db = motor[MONGO_DB_URI]
 try:
     asyncio.get_event_loop().run_until_complete(motor.server_info())
 except ServerSelectionTimeoutError:

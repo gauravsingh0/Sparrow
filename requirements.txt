@@ -64,4 +64,4 @@ better_profanity
 textblob 
 nudepy
 
-moter
+motor
