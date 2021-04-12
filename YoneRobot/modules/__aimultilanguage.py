@@ -26,7 +26,7 @@ from google_trans_new import google_translator
 from pyrogram import filters
 
 from YoneRobot import BOT_ID
-from YoneRobot.helper_funcs.aichat import add_chat, get_session, remove_chat
+from YoneRobot.helper_extra.aichat import add_chat, get_session, remove_chat
 from YoneRobot.pyrogramee.pluginshelper import admins_only, edit_or_reply
 from YoneRobot import pbot as yone
 
