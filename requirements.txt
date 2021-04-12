@@ -58,3 +58,9 @@ pytz
 lyricsgenius
 tswift
 envparse
+
+#profanity (Credits to Julia)
+better_profanity
+textblob 
+nudepy
+
