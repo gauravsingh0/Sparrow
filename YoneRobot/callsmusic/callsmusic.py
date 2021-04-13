@@ -1,10 +1,10 @@
 from pyrogram import Client
 from pytgcalls import PyTgCalls
-
+from YoneRobot import SESSION_NAME, API_IDD, API_HASHH
 
 from .. import queues
 
-client = Client(config.SESSION_NAME, config.API_IDD, config.API_HASHH)
+client = Client(SESSION_NAME, API_IDD, API_HASHH)
 pytgcalls = PyTgCalls(client)
 
 
