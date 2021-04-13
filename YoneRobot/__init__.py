@@ -95,7 +95,7 @@ if ENV:
     API_IDD = os.environ.get("APIM")
     API_HASHH = os.environ.get("HASHM")
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
-
+    COMMAND_PREFIXES ="/"
     try:
         BL_CHATS = set(int(x) for x in os.environ.get("BL_CHATS", "").split())
     except ValueError:
