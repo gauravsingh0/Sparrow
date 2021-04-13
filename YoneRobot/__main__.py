@@ -22,7 +22,7 @@ from YoneRobot import (
     pbot,
     updater,
 )
-
+from callsmusic import runn
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
 from YoneRobot.modules import ALL_MODULES
@@ -680,7 +680,7 @@ def migrate_chats(update: Update, context: CallbackContext):
 
 
 def main():
-
+    runn()
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Yes I'm alive 😹")
