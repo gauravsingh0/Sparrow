@@ -84,7 +84,7 @@ async def is_nsfw(event):
     return is_nsfw
 
 
-@tbot.on(events.NewMessage(pattern="/nsfwguardian (.*)"))
+@tbot.on(events.NewMessage(pattern="/gshield (.*)"))
 async def nsfw_watch(event):
     if not event.is_group:
         await event.reply("You Can Only Nsfw Watch in Groups.")
@@ -144,29 +144,18 @@ async def ws(event):
         return
     sender = await event.get_sender()
     await event.client.download_media(event.photo, "nudes.jpg")
-    img = "./nudes.jpg"
-    f = {"file": (img, open(img, "rb"))}
-    r = requests.post("https://starkapi.herokuapp.com/nsfw/", files=f).json()
-    if r.get("success") is False:
-        is_nsfw = False
-    elif r.get("is_nsfw") is True:
-        is_nsfw = True
-    elif r.get("is_nsfw") is False:
-        is_nsfw = False
-    return is_nsfw
-    if is_nsfw == True:
+    if nude.is_nude("./nudes.jpg"):
         await event.delete()
         st = sender.first_name
         hh = sender.id
-        final = f"**NSFW DETECTED**\n\n[{st}](tg://user?id={hh}) your message contain NSFW content.. So, Yone deleted the message\n\n **Nsfw Sender - User / Bot :** [{st}](tg://user?id={hh})  \n\n`⚔️Automatic Detections Powered By YoneAI` \n**#GROUP_GUARDIAN** "
+        final = f"**NSFW DETECTED**\n\n{st}](tg://user?id={hh}) your message contain NSFW content.. So, Yone deleted the message\n\n **Nsfw Sender - User / Bot :** {st}](tg://user?id={hh})  \n\n`⚔️Automatic Detections Powered By YoneAI` \n**#GROUP_GUARDIAN** "
         dev = await event.respond(final)
-        await asyncio.sleep(30)
+        await asyncio.sleep(10)
         await dev.delete()
         os.remove("nudes.jpg")
 
 
 """
-
 @pbot.on_message(filters.command("nsfwguardian") & ~filters.edited & ~filters.bot)
 async def add_nsfw(client, message):
     if len(await member_permissions(message.chat.id, message.from_user.id)) < 1:
@@ -179,10 +168,8 @@ async def add_nsfw(client, message):
             await pablo.edit("This Chat is Already In My DB")
             return
         me = await client.get_me()
-
         add_chat(message.chat.id)
         await pablo.edit("Successfully Added Chat To NSFW Watch.")
-
         
     elif status == "off" or status=="OFF" or status == "disable":
         pablo = await message.reply("`Processing..`")
@@ -226,8 +213,6 @@ async def nsfw_watch(client, message):
             f"**NSFW DETECTED**\n\n{hehe}'s message contain NSFW content.. So, Yone deleted the message\n\n **Nsfw Sender - User / Bot :** `{Escobar}` \n**Chat Title:** `{ctitle}` \n\n`⚔️Automatic Detections Powered By YoneAI` \n**#GROUP_GUARDIAN** ",
         )
         message.continue_propagation()
-
-
 """
 
 
@@ -441,8 +426,6 @@ async def del_profanity(event):
                     dev = await event.respond(final)
                     await asyncio.sleep(10)
                     await dev.delete()
-
-
 #
 
 __help__ = """
@@ -450,7 +433,7 @@ __help__ = """
 ✪ Yone can protect your group from NSFW senders, Slag word users and also can force members to use English
 
 <b>Commmands</b>
- - /nsfwguardian <i>on/off</i> - Enable|Disable Porn cleaning
+ - /gshield <i>on/off</i> - Enable|Disable Porn cleaning
  - /globalmode <i>on/off</i> - Enable|Disable English only mode
  - /profanity <i>on/off</i> - Enable|Disable slag word cleaning
  

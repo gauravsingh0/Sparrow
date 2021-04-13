@@ -440,7 +440,7 @@ def pin(update, context):
 
     prev_message = update.effective_message.reply_to_message
 
-    if user_can_pin(chat, user, bot.id) is False:
+    if user_can_pin(chat, user, context.bot.id) is False:
         message.reply_text("You are missing rights to pin a message!")
         return ""
 
@@ -708,7 +708,7 @@ dispatcher.add_handler(SETCHAT_TITLE_HANDLER)
 dispatcher.add_handler(SETSTICKET_HANDLER)
 dispatcher.add_handler(SETDESC_HANDLER)
 
-__mod_name__ = "ADMIN"
+__mod_name__ = "Admin"
 __command_list__ = [
     "adminlist",
     "admins",
