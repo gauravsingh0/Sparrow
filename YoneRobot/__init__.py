@@ -91,7 +91,9 @@ if ENV:
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
-
+    SESSION_NAME = os.environ.get("SESSION_M")
+    API_IDD = os.environ.get("APIM")
+    API_HASHH = os.environ.get("HASHM")
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
 
     try:
