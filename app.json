@@ -191,17 +191,17 @@
       },
       "SESSION_M": {
          "description": "Pyrogram string session of your music account. Keep the add to group privacy off",
-         "required": True,
+         "required": "True",
          "value": ""
       },
       "APIM": {
          "description": "MUSIC ACCOUNT API ID",
-         "required": True,
+         "required": "True",
          "value": ""
       },
       "HASHM": {
          "description": "API HASH OF MUSIC ACCOUNT",
-         "required": True,
+         "required": "True",
          "value": ""
       },
       "WALL_API": {
