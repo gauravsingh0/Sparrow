@@ -1,7 +1,7 @@
 from pyrogram import Client
 from pytgcalls import PyTgCalls
 
-from .. import config
+
 from .. import queues
 
 client = Client(config.SESSION_NAME, config.API_IDD, config.API_HASHH)
