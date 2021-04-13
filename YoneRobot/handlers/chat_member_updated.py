@@ -1,10 +1,10 @@
-from pyrogram import Client
+from YoneRobot import pbot
 from pyrogram.types import ChatMemberUpdated
 
 from .. import admins
 
 
-@Client.on_chat_member_updated()
+@pbot.on_chat_member_updated()
 async def chat_member_updated(_, chat_member_updated: ChatMemberUpdated):
     (
         admins.admins[chat_member_updated.chat.id].append(
