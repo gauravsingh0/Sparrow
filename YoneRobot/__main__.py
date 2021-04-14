@@ -22,7 +22,7 @@ from YoneRobot import (
     pbot,
     updater,
 )
-from callsmusic import runn
+from callsmusic.callsmusic import runn
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
 from YoneRobot.modules import ALL_MODULES
