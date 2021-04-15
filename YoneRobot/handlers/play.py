@@ -4,7 +4,6 @@ from YoneRobot import pbot
 from pyrogram.types import Message
 
 from ..callsmusic import callsmusic
-from ..config import DURATION_LIMIT
 from .. import converter
 from ..downloaders import youtube
 from ..helpers.decorators import errors
@@ -23,7 +22,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"Videos longer than {DURATION_LIMIT} minute(s) aren’t allowed, the provided video is {audio.duration / 60} minute(s)"
+                f"Videos longer than 10 minute(s) aren’t allowed, the provided video is {audio.duration / 60} minute(s)"
             )
 
         file_name = get_file_name(audio)
