@@ -9,6 +9,7 @@
          "yone"
       ],   
    "repository": "https://github.com/noob-kittu/YoneRobot",
+   "stack": "container",
    "addons": [
       {
          "options": {
