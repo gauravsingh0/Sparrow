@@ -10,7 +10,7 @@ def get_str_key(name, required=False):
         default = DEFAULTS[name]
     else:
         default = None
-    if not (data := env.str(name, default=default)) and not required:
+    if not (data = env.str(name, default=default)) and not required:
         LOGGER.warn("No str key: " + name)
         return None
     elif not data:
@@ -24,7 +24,7 @@ def get_int_key(name, required=False):
         default = DEFAULTS[name]
     else:
         default = None
-    if not (data := env.int(name, default=default)) and not required:
+    if not (data = env.int(name, default=default)) and not required:
         LOGGER.warn("No int key: " + name)
         return None
     elif not data:
