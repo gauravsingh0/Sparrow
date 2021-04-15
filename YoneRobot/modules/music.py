@@ -12,10 +12,11 @@ from tswift import Song
 from youtube_dl import YoutubeDL
 from youtubesearchpython import SearchVideos
 
+from YoneRobot.conf import get_str_key
 from YoneRobot.pyrogramee.pluginshelper import get_text, progress
 from YoneRobot import pbot
 
-GENIUS = "GENIUS_API_TOKEN"
+GENIUS = get_str_key("GENIUS_API_TOKEN", None)
 
 
 @pbot.on_message(filters.command(["vsong", "video"]))
