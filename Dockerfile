@@ -60,7 +60,11 @@ RUN apt update && apt upgrade -y && \
     libopus0 \
     libopus-dev \
     && rm -rf /var/lib/apt/lists /var/cache/apt/archives /tmp
-
+RUN apt install git curl python3-pip ffmpeg -y
+RUN pip3 install -U pip
+RUN curl -sL https://deb.nodesource.com/setup_15.x | bash -
+RUN apt-get install -y nodejs
+RUN npm i -g npm
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
