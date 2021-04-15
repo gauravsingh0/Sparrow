@@ -59,7 +59,7 @@ pytz
 lyricsgenius
 tswift
 envparse
-
+python-dotenv
 #profanity (Credits to Julia)
 better_profanity
 textblob 
