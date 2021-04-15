@@ -12,7 +12,7 @@ from pymongo.errors import ServerSelectionTimeoutError
 
 MONGO_DB = "DaisyX"
 client = MongoClient(MONGO_DB_URI)[MONGO_DB]
-motor = motor_asyncio.AsyncIOMotorClient(MONGO_DB_URI, MONGO_PORT)
+motor = motor_asyncio.AsyncIOMotorClient(MONGO_DB_URI)
 db = motor[MONGO_DB]
 db = client["yonerobot"]
 try:
