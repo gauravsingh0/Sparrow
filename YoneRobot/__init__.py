@@ -96,6 +96,7 @@ if ENV:
     API_HASHH = os.environ.get("HASHM")
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
     COMMAND_PREFIXES ="/"
+    GENIUS_API_TOKEN = os.environ.get("GENIUS_API")
     try:
         BL_CHATS = set(int(x) for x in os.environ.get("BL_CHATS", "").split())
     except ValueError:
