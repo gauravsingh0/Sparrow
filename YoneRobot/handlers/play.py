@@ -20,7 +20,7 @@ async def play(_, message: Message):
     url = get_url(message)
 
     if audio:
-        if round(audio.duration / 60) > DURATION_LIMIT:
+        if round(audio.duration / 60) > 10:
             raise DurationLimitError(
                 f"Videos longer than 10 minute(s) aren’t allowed, the provided video is {audio.duration / 60} minute(s)"
             )
