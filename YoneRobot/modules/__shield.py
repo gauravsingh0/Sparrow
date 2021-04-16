@@ -26,7 +26,6 @@ from telethon import events
 from telethon.tl.types import ChatBannedRights
 
 from YoneRobot import BOT_ID
-from YoneRobot.conf import get_int_key, get_str_key
 
 # from YoneRobot.db.mongo_helpers.nsfw_guard import add_chat, get_all_nsfw_chats, is_chat_in_db, rm_chat
 from YoneRobot.pyrogramee.telethonbasics import is_admin
@@ -44,7 +43,7 @@ from YoneRobot import telethn as tbot
 translator = google_translator()
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
-MONGO_DB_URI = get_str_key("MONGO_DB_URI")
+MONGO_DB_URI = MONGO_DB_URI
 
 client = MongoClient()
 client = MongoClient(MONGO_DB_URI)
