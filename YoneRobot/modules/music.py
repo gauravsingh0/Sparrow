@@ -14,9 +14,9 @@ from youtubesearchpython import SearchVideos
 
 from YoneRobot.conf import get_str_key
 from YoneRobot.pyrogramee.pluginshelper import get_text, progress
-from YoneRobot import pbot
+from YoneRobot import pbot , GENIUS_API_TOKEN
 
-GENIUS = get_str_key("GENIUS_API_TOKEN", None)
+GENIUS = GENIUS_API_TOKEN
 
 
 @pbot.on_message(filters.command(["vsong", "video"]))
