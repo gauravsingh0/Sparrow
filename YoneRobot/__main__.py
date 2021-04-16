@@ -680,7 +680,6 @@ def migrate_chats(update: Update, context: CallbackContext):
 
 
 def main():
-    Runn()
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Yes I'm alive 😹")
@@ -738,7 +737,7 @@ def main():
         telethn.run_until_disconnected()
 
     updater.idle()
-
+    Runn()
 
 if __name__ == "__main__":
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
