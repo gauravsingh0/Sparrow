@@ -74,14 +74,14 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-`Hellow` [🤗](https://telegra.ph/file/443a0e87e701d9f2f9451.jpg) `My name is` *Petricia*
+`Hellow` [🤗](https://telegra.ph/file/2c81b09bb01c89883b0b0.jpg) `My name is` *Sparrow*
 `I'm here to help you manage your groups! Hit` *📚Commands*   
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ADD YONE TO YOUR GROUP ➕️", url="t.me/Patrici_a_bot?startgroup=true"),
+            text="➕️ ADD YONE TO YOUR GROUP ➕️", url="t.me/GROUP_SPARROW_ROBOT?startgroup=true"),
     ],
     [
         InlineKeyboardButton(text="ℹ️ ABOUT", callback_data="yone_"),
@@ -89,20 +89,20 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="🤴 OWNER", url="https://t.me/riyanshika_r"),
+            text="🤴 OWNER", url="https://t.me/Black_heart_hacker_xon"),
         InlineKeyboardButton(
-            text="👥 SUPPORT", url="https://t.me/Patricia_support"
+            text="👥 SUPPORT", url="https://t.me/yone_support_official"
         ),
     ],
 ]
 
 
 HELP_STRINGS = """
-`Hi.. I'm` [Patricia](https://telegra.ph/file/443a0e87e701d9f2f9451.jpg)
+`Hi.. I'm` [Sparrow](https://telegra.ph/file/2c81b09bb01c89883b0b0.jpg)
 `Click on the buttons below to get documentation about specific modules..`"""
 
 
-yone_IMG = "https://telegra.ph/file/443a0e87e701d9f2f9451.jpg"
+yone_IMG = "https://telegra.ph/file/2c81b09bb01c89883b0b0.jpg"
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -347,14 +347,14 @@ def yone_about_callback(update, context):
     query = update.callback_query
     if query.data == "yone_":
         query.message.edit_text(
-            text=""" ℹ️ I'm *petricia*, a powerful group management bot built to help you manage your group easily.
+            text=""" ℹ️ I'm *Sparrow*, a powerful group management bot built to help you manage your group easily.
                  \n❍ I can restrict users.
                  \n❍ I can greet users with customizable welcome messages and even set a group's rules.
                  \n❍ I have an advanced anti-flood system.
                  \n❍ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
                  \n❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
                  \n❍ I check for admins' permissions before executing any command and more stuffs
-                 \n\n_Petricia licensed under the GNU General Public License v3.
+                 \n\n_Sparrow licensed under the GNU General Public License v3.
                  \n\nIf you have any question about yone, let us know at .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -381,7 +381,7 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..🤗 I'm *Petricia*
+            text=""" Hi..🤗 I'm *Sparrow*
                  \nHere is the [Source Code](https://github.com/Bot-support/YoneRobot) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
