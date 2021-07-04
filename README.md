@@ -3,11 +3,11 @@
 </p>
 
 <p align="center">
-  <img src="https://telegra.ph/file/70023f0f9de0c34631333.jpg">
+  <img src="https://telegra.ph/file/0cce521ae38466d192c15.jpg">
 </p>
 
-# Patricia
-Me On Telegram [✨PATRICIA✨](https://t.me/Patricia_support)
+# sparrow
+Me On Telegram [✨ sparrow✨](https://t.me/yone_support_official)
 This is just a demo bot.. Don't try to add to your group.. Create your own bot 
 ## How To Host
 The easiest way to deploy this Bot
@@ -15,9 +15,5 @@ The easiest way to deploy this Bot
  
 CREDITS
 ```
-oxilic:- @Itz_oxiOp
-Blaze:- @blaze_oop
-Anmol:- @Timeisnotwaiting
-Alone :- @Tere_bandi_meri_fan_hai
-Vedant:- @craziest_peep
-
+Gaurav:-
+@Black_heart_hacker_xon
