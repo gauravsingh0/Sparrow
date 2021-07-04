@@ -3,7 +3,7 @@
   <img src="https://telegra.ph/file/0cce521ae38466d192c15.jpg">
 </p>
 
-# YoneRobot
+# Sparrow
 Me On Telegram [✨ Sparrow✨](https://t.me/GROUP_SPARROW_ROBOT)
 ## How To Host
 The easiest way to deploy this Bot
