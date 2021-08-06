@@ -1,5 +1,5 @@
 {
-      "name": "YoneRobot",
+      "name": "Sparrow",
       "description": "Telegram group management bot.",
       "keywords": [
          "telegram",
@@ -8,7 +8,7 @@
          "manager",
          "yone"
       ],   
-   "repository": "https://github.com/noob-kittu/YoneRobot",
+   "repository": "https://github.com/gauravsingh0/SPARROW",
    "stack": "container",
    "addons": [
       {
@@ -174,7 +174,7 @@
       "DONATION_LINK": {
          "description": "Optional: link where you would like to receive donations. If you are a noob, better leave it linking to paul",
          "required": false,
-         "value": "https://www.paypal.me/PaulSonOfLars"
+         "value": "Its free"
       },
       "DEL_CMDS": {
          "description": "Set this to True if you want to delete command messages from users who don't have the perms to run that command.",
