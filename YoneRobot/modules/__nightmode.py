@@ -117,7 +117,7 @@ async def job_open():
     for warner in ws_chats:
         try:
             await tbot.send_message(
-              int(warner.chat_id), "06:00 Am, Group Is Opening.\n**Powered By yone**"
+              int(warner.chat_id), "06:00 Am, Group Is Opening.\n**Powered By Sparrow**"
             )
             await tbot(
             functions.messages.EditChatDefaultBannedRightsRequest(
