@@ -81,7 +81,7 @@ PM_START_TEXT = """
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ADD SPARROW TO YOUR GROUP ➕️", url="t.me/GROUP_SPARROW_ROBOT?startgroup=true"),
+            text="➕️ ADD SPARROW TO YOUR GROUP ➕️", url="t.me/SPARROW_ROBBOT?startgroup=true"),
     ],
     [
         InlineKeyboardButton(text="ℹ️ ABOUT", callback_data="yone_"),
@@ -89,9 +89,9 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="🤴 OWNER", url="https://t.me/Black_heart_hacker_xon"),
+            text="🤴 OWNER", url="https://t.me/Sanyas_le_lia"),
         InlineKeyboardButton(
-            text="👥 SUPPORT", url="https://t.me/yone_support_official"
+            text="👥 SUPPORT", url="https://t.me/iitjeeneet_02"
         ),
     ],
 ]
