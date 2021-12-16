@@ -89,9 +89,9 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="🤴 OWNER", url="https://t.me/Sanyas_le_lia"),
+            text="🤴 OWNER", url="https://t.me/gauravsingh003"),
         InlineKeyboardButton(
-            text="👥 SUPPORT", url="https://t.me/iitjeeneet_02"
+            text="👥 SUPPORT", url="https://t.me/sparrow_support_official"
         ),
     ],
 ]
