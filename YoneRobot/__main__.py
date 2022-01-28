@@ -4,7 +4,7 @@ import re
 from sys import argv
 from typing import Optional
 
-from YoneRobot import (
+from SparrowRobot import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -25,9 +25,9 @@ from YoneRobot import (
 from .callsmusic import Runn
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from YoneRobot.modules import ALL_MODULES
-from YoneRobot.modules.helper_funcs.chat_status import is_user_admin
-from YoneRobot.modules.helper_funcs.misc import paginate_modules
+from SparrowRobot.modules import ALL_MODULES
+from SparrowRobot.modules.helper_funcs.chat_status import is_user_admin
+from SparrowRobot.modules.helper_funcs.misc import paginate_modules
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -74,38 +74,38 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-`Hellow` [🤗](https://telegra.ph/file/e5d7a1f560114e16bdf3b.jpg) `My name is` *Sparrow*
+`Hellow` [🤗](https://telegra.ph/file/8adff3b0ac1189e0a2389.jpg) `My name is` *Sparrow✘*
 `I'm here to help you manage your groups! Hit` *📚Commands*   
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ADD SPARROW TO YOUR GROUP ➕️", url="t.me/SPARROW_ROBBOT?startgroup=true"),
+            text="➕️ Add me to your chat ➕️", url="t.me/SparrowRobot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="ℹ️ ABOUT", callback_data="yone_"),
-        InlineKeyboardButton(text="📚 COMMANDS", callback_data="help_back"),
+        InlineKeyboardButton(text="About", callback_data="sparrow_"),
+        InlineKeyboardButton(text="Commands", callback_data="help_back"),
     ],
     [
         InlineKeyboardButton(
-            text="🤴 OWNER", url="https://t.me/gauravsingh003"),
+            text="Owner", url="https://t.me/grbfounder"),
         InlineKeyboardButton(
-            text="👥 SUPPORT", url="https://t.me/sparrow_support_official"
+            text="Support", url="https://t.me/elena_support_group"
         ),
     ],
 ]
 
 
 HELP_STRINGS = """
-`Hi.. I'm` [Sparrow🙋‍♀️](https://telegra.ph/file/e5d7a1f560114e16bdf3b.jpg)
+`Hi.. I'm` [Sparrow✘](https://telegra.ph/file/8adff3b0ac1189e0a2389.jpg)
 `Click on the buttons below to get documentation about specific modules..`"""
 
 
-yone_IMG = "https://telegra.ph/file/e5d7a1f560114e16bdf3b.jpg"
+sparrow_IMG = "https://telegra.ph/file/8adff3b0ac1189e0a2389.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project via [Paypal](#) or by contacting @Black_heart_hacker_xon \
+ You can support the project via [Paypal](#) or by contacting @grbfounder \
  Supporting isnt always financial! \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
@@ -120,7 +120,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("YoneRobot.modules." + module_name)
+    imported_module = importlib.import_module("SparrowRobot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -348,31 +348,31 @@ def help_button(update, context):
 
 
 @run_async
-def yone_about_callback(update, context):
+def sparrow_about_callback(update, context):
     query = update.callback_query
-    if query.data == "yone_":
+    if query.data == "sparrow_":
         query.message.edit_text(
-            text=""" ℹ️ I'm *Sparrow*, a powerful group management bot built to help you manage your group easily.
-                 \n❍ I can restrict users.
-                 \n❍ I can greet users with customizable welcome messages and even set a group's rules.
-                 \n❍ I have an advanced anti-flood system.
-                 \n❍ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
-                 \n❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
-                 \n❍ I check for admins' permissions before executing any command and more stuffs
-                 \n\n_yone's licensed under the GNU General Public License v3.0_
-                 \nHere is the [💾Repository](https://github.com/gauravsingh0/SPARROW).
-                 \n\nIf you have any question about Sparrow, let us know at .""",
+            text=""" ℹ️ I'm *Sparrow✘*, a powerful group management bot built to help you manage your group easily.
+                 \n◑ I can restrict users.
+                 \n◑ I can greet users with customizable welcome messages and even set a group's rules.
+                 \n◑ I have an advanced anti-flood system.
+                 \n◑ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
+                 \n◑ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
+                 \n◑ I check for admins' permissions before executing any command and more stuffs
+                 \n\n_sparrow's licensed under the GNU General Public License v3.0_
+                 \nHere is the [source](https://t.me/gahababanan/2).
+                 \n\nIf you have any question about Sparrow✘, let us know at support group .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Back", callback_data="yone_back")
+                    InlineKeyboardButton(text="Back", callback_data="sparrow_back")
                  ]
                 ]
             ),
         )
-    elif query.data == "yone_back":
+    elif query.data == "sparrow_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -387,8 +387,8 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..🤗 I'm *Sparrow*
-                 \nHere is the [Source Code](https://github.com/gauravsingh0/SPARROW) .""",
+            text=""" Hi.. I'm *Sparrow✘*
+                 \nHere is the [Source Code](https://t.me/gahababanan/2) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -682,7 +682,7 @@ def migrate_chats(update: Update, context: CallbackContext):
 def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Yes I'm alive 😹")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Yes I'm alive")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
@@ -699,7 +699,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(yone_about_callback, pattern=r"yone_")
+    about_callback_handler = CallbackQueryHandler(sparrow_about_callback, pattern=r"sparrow_")
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
 
     donate_handler = CommandHandler("donate", donate)
