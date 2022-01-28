@@ -103,7 +103,7 @@ if ENV:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
 else:
-    from YoneRobot.config import Development as Config
+    from SparrowRobot.config import Development as Config
 
     TOKEN = Config.TOKEN
 
@@ -192,7 +192,7 @@ else:
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("yone", API_ID, API_HASH)
-pbot = Client("yonepbot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN , plugins=dict(root= "YoneRobot.handlers"))
+pbot = Client("sparrowpbot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN , plugins=dict(root= "SparrowRobot.handlers"))
 dispatcher = updater.dispatcher
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
@@ -202,7 +202,7 @@ DEMONS = list(DEMONS)
 TIGERS = list(TIGERS)
 
 # Load at end to ensure all prev variables have been set
-from YoneRobot.modules.helper_funcs.handlers import (
+from SparrowRobot.modules.helper_funcs.handlers import (
     CustomCommandHandler,
     CustomMessageHandler,
     CustomRegexHandler,
