@@ -74,14 +74,14 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-`Hellow` [🤗](https://telegra.ph/file/8adff3b0ac1189e0a2389.jpg) `My name is` *Sparrow✘*
-`I'm here to help you manage your groups! Hit` *📚Commands*   
+`Hellow` `My name is` *Sparrow✘* A telegram group management bot.
+`I'm here to help you manage your groups! Hit` *Commands*   
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ Add me to your chat ➕️", url="t.me/SparrowRobot?startgroup=true"),
+            text="Add me to your chat ", url="t.me/SparrowRobot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(text="About", callback_data="sparrow_"),
@@ -89,9 +89,9 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="Owner", url="https://t.me/grbfounder"),
+            text="Support", url="https://t.me/elena_support_group"),
         InlineKeyboardButton(
-            text="Support", url="https://t.me/elena_support_group"
+            text="Updates", url="https://t.me/grb_network"
         ),
     ],
 ]
@@ -353,12 +353,12 @@ def sparrow_about_callback(update, context):
     if query.data == "sparrow_":
         query.message.edit_text(
             text=""" ℹ️ I'm *Sparrow✘*, a powerful group management bot built to help you manage your group easily.
-                 \n◑ I can restrict users.
-                 \n◑ I can greet users with customizable welcome messages and even set a group's rules.
-                 \n◑ I have an advanced anti-flood system.
-                 \n◑ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
-                 \n◑ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
-                 \n◑ I check for admins' permissions before executing any command and more stuffs
+                 \n◑ Warning system.
+                 \n◑ Artificial intelligence.
+                 \n◑ Flood control system.
+                 \n◑ Note keeping system.
+                 \n◑ Filters keeping system.
+                 \n◑ Approvals and much more.
                  \n\n_sparrow's licensed under the GNU General Public License v3.0_
                  \nHere is the [source](https://t.me/gahababanan/2).
                  \n\nIf you have any question about Sparrow✘, let us know at support group .""",
